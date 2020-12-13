@@ -35,6 +35,7 @@ export class AppComponent {
   }
 
   async justWait20Secs() {
+    console.log('inside justwait')
     await new Promise((resolve) => { setTimeout(() => console.log('justWait20Secs done waiting 15 secs'), 15000); resolve('done') })
     console.log('finished waiting first 15 secs')
     await new Promise((resolve) => { setTimeout(() => console.log('justWait20Secs done waiting 5 secs'), 5000); resolve('done') })
@@ -53,8 +54,8 @@ export class AppComponent {
 
     await new Promise((myResolve) => setTimeout(() => { console.log('inside timeout 2'); myResolve('2') }, 3000))
 
-    //    await this.justWait20Secs()
-    this.justWait20Secs()
+    await this.justWait20Secs()
+    //this.justWait20Secs()
 
     console.log('leaving onPressMe, navigate called next', this.counter)
 

@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "promise-example"
+  "defaultProject": "promise-example",
+  "cli": {
+    "analytics": "aa03dce8-f1f6-4e31-af0e-437669c2e331"
+  }
 }

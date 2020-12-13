@@ -20,16 +20,18 @@ export class AppComponent {
     this.resetTimer();
   }
 
-  @HostListener('mousemove')
-  @HostListener('keypress')
-  @HostListener('click')
-  @HostListener('wheel')
+  @HostListener('window:mousemove')
+  @HostListener('window:keypress')
+  @HostListener('window:click')
+  @HostListener('window:wheel')
   resetTimer() {
-    window.clearTimeout(this.time);
+    clearTimeout(this.time);
+    //    console.log('cleared time=',this.time)
     this.time = window.setTimeout(() => {
       alert('Idle for 30 minutes.');
-      //    }, 1800000);
-    }, 10000);
+    }, 1800000);
+    //    }, 5000);
+    //    console.log('set time=', this.time)
   }
 
   async justWait20Secs() {
